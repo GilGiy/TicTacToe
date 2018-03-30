@@ -5,7 +5,7 @@ import os
 board=[0,0,0,0,0,0,0,0,0]
 
 #rows: A1, B1, B1, A, B, C, D1, D2 
-rowlist_player=[0,0,0,0,0,0,0,0]
+rowlist_computer=[0,0,0,0,0,0,0,0]
 rowlist_computer=[0,0,0,0,0,0,0,0]
 
 #display the board
@@ -25,11 +25,11 @@ def PlayerMove():
     print board[3:6]
     print board[0:3]
     print ""
-    print rowlist_player[7]
-    print rowlist_player[5]
-    print rowlist_player[4]
-    print rowlist_player[3]
-    print rowlist_player[6], rowlist_player[0:3]
+    print rowlist_computer[7]
+    print rowlist_computer[5]
+    print rowlist_computer[4]
+    print rowlist_computer[3]
+    print rowlist_computer[6], rowlist_computer[0:3]
 
 
     #get user input for move
@@ -49,43 +49,43 @@ def PlayerMove():
     # print rowlist_player[0:8]
 
     if PlayerMove is 0:
-        rowlist_player[0]=(rowlist_player[0]+1)
-        rowlist_player[3]=(rowlist_player[3]+1)
-        rowlist_player[6]=(rowlist_player[6]+1)
+        rowlist_computer[0]=(rowlist_computer[0]+1)
+        rowlist_computer[3]=(rowlist_computer[3]+1)
+        rowlist_computer[6]=(rowlist_computer[6]+1)
     if PlayerMove is 1:
-        rowlist_player[1]=(rowlist_player[1]+1)
-        rowlist_player[3]=(rowlist_player[3]+1)
+        rowlist_computer[1]=(rowlist_computer[1]+1)
+        rowlist_computer[3]=(rowlist_computer[3]+1)
     if PlayerMove is 2:
-        rowlist_player[2]=(rowlist_player[2]+1)
-        rowlist_player[3]=(rowlist_player[3]+1)
-        rowlist_player[7]=(rowlist_player[7]+1)
+        rowlist_computer[2]=(rowlist_computer[2]+1)
+        rowlist_computer[3]=(rowlist_computer[3]+1)
+        rowlist_computer[7]=(rowlist_computer[7]+1)
     if PlayerMove is 3:
-        rowlist_player[0]=(rowlist_player[0]+1)
-        rowlist_player[4]=(rowlist_player[4]+1)
+        rowlist_computer[0]=(rowlist_computer[0]+1)
+        rowlist_computer[4]=(rowlist_computer[4]+1)
     if PlayerMove is 4:
-        rowlist_player[1]=(rowlist_player[1]+1)
-        rowlist_player[4]=(rowlist_player[4]+1)
-        rowlist_player[6]=(rowlist_player[6]+1)
-        rowlist_player[7]=(rowlist_player[7]+1)
+        rowlist_computer[1]=(rowlist_computer[1]+1)
+        rowlist_computer[4]=(rowlist_computer[4]+1)
+        rowlist_computer[6]=(rowlist_computer[6]+1)
+        rowlist_computer[7]=(rowlist_computer[7]+1)
     if PlayerMove is 5:
-        rowlist_player[2]=(rowlist_player[2]+1)
-        rowlist_player[4]=(rowlist_player[4]+1)
+        rowlist_computer[2]=(rowlist_computer[2]+1)
+        rowlist_computer[4]=(rowlist_computer[4]+1)
     if PlayerMove is 6:
-        rowlist_player[0]=(rowlist_player[0]+1)
-        rowlist_player[5]=(rowlist_player[5]+1)
-        rowlist_player[7]=(rowlist_player[7]+1)
+        rowlist_computer[0]=(rowlist_computer[0]+1)
+        rowlist_computer[5]=(rowlist_computer[5]+1)
+        rowlist_computer[7]=(rowlist_computer[7]+1)
     if PlayerMove is 7:
-        rowlist_player[1]=(rowlist_player[1]+1)
-        rowlist_player[5]=(rowlist_player[5]+1)
+        rowlist_computer[1]=(rowlist_computer[1]+1)
+        rowlist_computer[5]=(rowlist_computer[5]+1)
     if PlayerMove is 8:
-        rowlist_player[2]=(rowlist_player[2]+1)
-        rowlist_player[5]=(rowlist_player[5]+1)
-        rowlist_player[6]=(rowlist_player[6]+1)
+        rowlist_computer[2]=(rowlist_computer[2]+1)
+        rowlist_computer[5]=(rowlist_computer[5]+1)
+        rowlist_computer[6]=(rowlist_computer[6]+1)
     
-    if max(rowlist_player) < 3:
+    if max(rowlist_computer) < 3:
         ComputerMove()
     else:
-        PlayerWins()
+        print("YOU WIN!!!!")
 
 
 
@@ -100,11 +100,11 @@ def ComputerMove():
     print board[3:6]
     print board[0:3]
     print ""
-    print rowlist_player[7]
-    print rowlist_player[5]
-    print rowlist_player[4]
-    print rowlist_player[3]
-    print rowlist_player[6], rowlist_player[0:3]
+    print rowlist_computer[7]
+    print rowlist_computer[5]
+    print rowlist_computer[4]
+    print rowlist_computer[3]
+    print rowlist_computer[6], rowlist_computer[0:3]
 
 
     #get user input for move
@@ -158,40 +158,11 @@ def ComputerMove():
         rowlist_computer[6]=(rowlist_computer[6]+1)
     
     if max(rowlist_computer) < 3:
-        LoopBackPlayer()
+        ComputerMove()
     else:
-        ComputerWins()
+        print("YOU WIN!!!!")
 
 
-def PlayerWins():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    #display the board
-    print("")
-    print board[6:9]
-    print board[3:6]
-    print board[0:3]
-    print ""
-    print rowlist_player[7]
-    print rowlist_player[5]
-    print rowlist_player[4]
-    print rowlist_player[3]
-    print rowlist_player[6], rowlist_player[0:3]
-    print("Player One Wins!!")
-
-def ComputerWins():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    #display the board
-    print("")
-    print board[6:9]
-    print board[3:6]
-    print board[0:3]
-    print ""
-    print rowlist_player[7]
-    print rowlist_player[5]
-    print rowlist_player[4]
-    print rowlist_player[3]
-    print rowlist_player[6], rowlist_player[0:3]
-    print("Player Two Wins!!")
 
 PlayerMove()
 
